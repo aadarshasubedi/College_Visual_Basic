@@ -45,13 +45,14 @@ Partial Class Form1
         Me.txtBox_addr1 = New System.Windows.Forms.TextBox()
         Me.txtBox_addr2 = New System.Windows.Forms.TextBox()
         Me.txtBox_post = New System.Windows.Forms.TextBox()
-        Me.txtBox_occ = New System.Windows.Forms.TextBox()
         Me.txtBox_tel = New System.Windows.Forms.TextBox()
         Me.txtBox_town = New System.Windows.Forms.TextBox()
         Me.txtBox_email = New System.Windows.Forms.TextBox()
         Me.txtBox_com = New System.Windows.Forms.TextBox()
         Me.txtBox_refer = New System.Windows.Forms.TextBox()
         Me.toolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.dropDown_dob = New System.Windows.Forms.ComboBox()
+        Me.dropDown_occ = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
         'Label1
@@ -274,14 +275,6 @@ Partial Class Form1
         Me.txtBox_post.Size = New System.Drawing.Size(198, 30)
         Me.txtBox_post.TabIndex = 26
         '
-        'txtBox_occ
-        '
-        Me.txtBox_occ.Font = New System.Drawing.Font("Consolas", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBox_occ.Location = New System.Drawing.Point(299, 406)
-        Me.txtBox_occ.Name = "txtBox_occ"
-        Me.txtBox_occ.Size = New System.Drawing.Size(198, 30)
-        Me.txtBox_occ.TabIndex = 27
-        '
         'txtBox_tel
         '
         Me.txtBox_tel.Font = New System.Drawing.Font("Consolas", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -327,17 +320,38 @@ Partial Class Form1
         Me.toolTip1.IsBalloon = True
         Me.toolTip1.ToolTipTitle = "Information"
         '
+        'dropDown_dob
+        '
+        Me.dropDown_dob.Font = New System.Drawing.Font("Consolas", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dropDown_dob.FormattingEnabled = True
+        Me.dropDown_dob.Items.AddRange(New Object() {"Under 7", "7-12", "12-15", "15-18", "18-21", "21+"})
+        Me.dropDown_dob.Location = New System.Drawing.Point(299, 190)
+        Me.dropDown_dob.Name = "dropDown_dob"
+        Me.dropDown_dob.Size = New System.Drawing.Size(198, 30)
+        Me.dropDown_dob.TabIndex = 33
+        '
+        'dropDown_occ
+        '
+        Me.dropDown_occ.Font = New System.Drawing.Font("Consolas", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dropDown_occ.FormattingEnabled = True
+        Me.dropDown_occ.Items.AddRange(New Object() {"Student", "Induvidual", "Company Rep"})
+        Me.dropDown_occ.Location = New System.Drawing.Point(299, 406)
+        Me.dropDown_occ.Name = "dropDown_occ"
+        Me.dropDown_occ.Size = New System.Drawing.Size(198, 30)
+        Me.dropDown_occ.TabIndex = 34
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(784, 546)
+        Me.Controls.Add(Me.dropDown_occ)
+        Me.Controls.Add(Me.dropDown_dob)
         Me.Controls.Add(Me.txtBox_refer)
         Me.Controls.Add(Me.txtBox_com)
         Me.Controls.Add(Me.txtBox_email)
         Me.Controls.Add(Me.txtBox_town)
         Me.Controls.Add(Me.txtBox_tel)
-        Me.Controls.Add(Me.txtBox_occ)
         Me.Controls.Add(Me.txtBox_post)
         Me.Controls.Add(Me.txtBox_addr2)
         Me.Controls.Add(Me.txtBox_addr1)
@@ -388,12 +402,13 @@ Partial Class Form1
     Friend WithEvents txtBox_addr1 As System.Windows.Forms.TextBox
     Friend WithEvents txtBox_addr2 As System.Windows.Forms.TextBox
     Friend WithEvents txtBox_post As System.Windows.Forms.TextBox
-    Friend WithEvents txtBox_occ As System.Windows.Forms.TextBox
     Friend WithEvents txtBox_tel As System.Windows.Forms.TextBox
     Friend WithEvents txtBox_town As System.Windows.Forms.TextBox
     Friend WithEvents txtBox_email As System.Windows.Forms.TextBox
     Friend WithEvents txtBox_com As System.Windows.Forms.TextBox
     Friend WithEvents txtBox_refer As System.Windows.Forms.TextBox
     Friend WithEvents toolTip1 As System.Windows.Forms.ToolTip
+    Friend WithEvents dropDown_dob As System.Windows.Forms.ComboBox
+    Friend WithEvents dropDown_occ As System.Windows.Forms.ComboBox
 
 End Class
