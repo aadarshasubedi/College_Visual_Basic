@@ -1,0 +1,14 @@
+C:\Users\Ryan\Documents\GitHub\College_Visual_Basic\NetmediaSolutionsFormNew\NetmediaSolutionsFormNew\bin\Release\NetmediaSolutionsFormNew.exe.config
+C:\Users\Ryan\Documents\GitHub\College_Visual_Basic\NetmediaSolutionsFormNew\NetmediaSolutionsFormNew\bin\Release\NetmediaSolutionsFormNew.exe
+C:\Users\Ryan\Documents\GitHub\College_Visual_Basic\NetmediaSolutionsFormNew\NetmediaSolutionsFormNew\bin\Release\NetmediaSolutionsFormNew.pdb
+C:\Users\Ryan\Documents\GitHub\College_Visual_Basic\NetmediaSolutionsFormNew\NetmediaSolutionsFormNew\bin\Release\NetmediaSolutionsFormNew.xml
+C:\Users\Ryan\Documents\GitHub\College_Visual_Basic\NetmediaSolutionsFormNew\NetmediaSolutionsFormNew\obj\Release\NetmediaSolutionsFormNew.Main.resources
+C:\Users\Ryan\Documents\GitHub\College_Visual_Basic\NetmediaSolutionsFormNew\NetmediaSolutionsFormNew\obj\Release\NetmediaSolutionsFormNew.Resources.resources
+C:\Users\Ryan\Documents\GitHub\College_Visual_Basic\NetmediaSolutionsFormNew\NetmediaSolutionsFormNew\obj\Release\Netmedia_ERS_ryanwalmsley.vbproj.GenerateResource.Cache
+C:\Users\Ryan\Documents\GitHub\College_Visual_Basic\NetmediaSolutionsFormNew\NetmediaSolutionsFormNew\obj\Release\NetmediaSolutionsFormNew.exe
+C:\Users\Ryan\Documents\GitHub\College_Visual_Basic\NetmediaSolutionsFormNew\NetmediaSolutionsFormNew\obj\Release\NetmediaSolutionsFormNew.xml
+C:\Users\Ryan\Documents\GitHub\College_Visual_Basic\NetmediaSolutionsFormNew\NetmediaSolutionsFormNew\obj\Release\NetmediaSolutionsFormNew.pdb
+C:\Users\Ryan\Documents\GitHub\College_Visual_Basic\NetmediaSolutionsFormNew\NetmediaSolutionsFormNew\bin\Release\NetmediaSolutionsFormNew.exe.manifest
+C:\Users\Ryan\Documents\GitHub\College_Visual_Basic\NetmediaSolutionsFormNew\NetmediaSolutionsFormNew\bin\Release\NetmediaSolutionsFormNew.application
+C:\Users\Ryan\Documents\GitHub\College_Visual_Basic\NetmediaSolutionsFormNew\NetmediaSolutionsFormNew\obj\Release\NetmediaSolutionsFormNew.exe.manifest
+C:\Users\Ryan\Documents\GitHub\College_Visual_Basic\NetmediaSolutionsFormNew\NetmediaSolutionsFormNew\obj\Release\NetmediaSolutionsFormNew.application

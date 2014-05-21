@@ -1,0 +1,10 @@
+C:\Users\Ryan\Documents\GitHub\College_Visual_Basic\NetmediaSolutionsFormNew\NetmediaSolutionsFormNew\bin\Debug\NetmediaSolutionsFormNew.exe.config
+C:\Users\Ryan\Documents\GitHub\College_Visual_Basic\NetmediaSolutionsFormNew\NetmediaSolutionsFormNew\bin\Debug\NetmediaSolutionsFormNew.exe
+C:\Users\Ryan\Documents\GitHub\College_Visual_Basic\NetmediaSolutionsFormNew\NetmediaSolutionsFormNew\bin\Debug\NetmediaSolutionsFormNew.pdb
+C:\Users\Ryan\Documents\GitHub\College_Visual_Basic\NetmediaSolutionsFormNew\NetmediaSolutionsFormNew\bin\Debug\NetmediaSolutionsFormNew.xml
+C:\Users\Ryan\Documents\GitHub\College_Visual_Basic\NetmediaSolutionsFormNew\NetmediaSolutionsFormNew\obj\Debug\NetmediaSolutionsFormNew.Main.resources
+C:\Users\Ryan\Documents\GitHub\College_Visual_Basic\NetmediaSolutionsFormNew\NetmediaSolutionsFormNew\obj\Debug\NetmediaSolutionsFormNew.Resources.resources
+C:\Users\Ryan\Documents\GitHub\College_Visual_Basic\NetmediaSolutionsFormNew\NetmediaSolutionsFormNew\obj\Debug\Netmedia_ERS_ryanwalmsley.vbproj.GenerateResource.Cache
+C:\Users\Ryan\Documents\GitHub\College_Visual_Basic\NetmediaSolutionsFormNew\NetmediaSolutionsFormNew\obj\Debug\NetmediaSolutionsFormNew.exe
+C:\Users\Ryan\Documents\GitHub\College_Visual_Basic\NetmediaSolutionsFormNew\NetmediaSolutionsFormNew\obj\Debug\NetmediaSolutionsFormNew.xml
+C:\Users\Ryan\Documents\GitHub\College_Visual_Basic\NetmediaSolutionsFormNew\NetmediaSolutionsFormNew\obj\Debug\NetmediaSolutionsFormNew.pdb
