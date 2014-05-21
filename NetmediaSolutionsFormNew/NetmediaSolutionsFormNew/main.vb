@@ -1,8 +1,30 @@
 ﻿Public Class Main
+    'NHC Netmedia Registration System
+    'Copyright (C) 2014  Ryan Walmsley
+
+    'This program is free software: you can redistribute it and/or modify
+    'it under the terms of the GNU General Public License as published by
+    'the Free Software Foundation, either version 3 of the License, or
+    '(at your option) any later version.
+
+    'This program is distributed in the hope that it will be useful,
+    'but WITHOUT ANY WARRANTY; without even the implied warranty of
+    'MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    'GNU General Public License for more details.
+
+    'You should have received a copy of the GNU General Public License
+    'along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+    'Start Program
+
+    'We use the tickets on all of the program, declare this as a public variable
     Public Shared records(0) As String
+    'Change this variable to the event name and then compile for use.
     Public Shared eventName As String = "Minecraft Day!"
-    '(C) Ryan Walmsley
-    'All code is licensed under the GNU GPL V3 License
+    'Change this variable to the name of the TXT file you wish to store the data in.
+    Public Shared storageFile As String = "recordStorage.txt"
+
+    'Load the form
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Call the function to load all the data
         loadFromTextFile()
@@ -23,47 +45,46 @@
         'Lets reset the first tab
         reset_tab1()
         'And on the second tab update the ticket
-        updateTicket()
+        updateTicket(0)
     End Sub
 
 
     Private Sub dropDown_occ_SelectedIndexChanged(sender As Object, e As EventArgs) Handles dropDown_occ.SelectedIndexChanged
         'We want to make the company name editable if occupation is company rep
         If (dropDown_occ.SelectedIndex = 0) Then
-            txtBox_com.Enabled = True
-
+            txtBox_com.Enabled = True 'The person is a company rep so enable the box.
         Else
-            txtBox_com.Enabled = False
-
+            txtBox_com.Enabled = False 'The person is not a company rep so disable the box.
         End If
-
     End Sub
 
-
-
-
     Private Sub button_print_Click(sender As Object, e As EventArgs) Handles button_print.Click
+        'Somebody pressed the print ticket button
+        'Set the document name to the ticket
         print_ticket_document.DocumentName = "lbl_Ticket"
-
+        'Open up the print dialog to get the printer & settings the user wants to use
         print_ticket_dialog.Document = print_ticket_document
+        'If ok then print the document
         If print_ticket_dialog.ShowDialog() = Windows.Forms.DialogResult.OK Then
-            print_ticket_document.PrinterSettings = print_ticket_document.PrinterSettings
-            print_ticket_document.Print()
+            print_ticket_document.PrinterSettings = print_ticket_document.PrinterSettings ' Set the settings for the printer to the settings captured from the dialog
+            print_ticket_document.Print() ' Then run the print command
         Else
-            MsgBox("Unknown Error printing")
+            MsgBox("Either an unknown error occured when printing or printing was counciled.") 'An error or they stopped printing
         End If
-
-
     End Sub
 
 
     Private Sub print_ticket_document_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles print_ticket_document.PrintPage
-        Dim prFont As New Font("Consolas", 18, GraphicsUnit.Point)
-        e.Graphics.DrawString(lbl_Ticket.Text, prFont, Brushes.Black, 50, 50)
+        'This handles the print part
+        Dim prFont As New Font("Consolas", 18, GraphicsUnit.Point) 'Set the font to the same as in the app
+        e.Graphics.DrawString(lbl_Ticket.Text, prFont, Brushes.Black, 50, 50) ' Print the ticket's text, set the font to the font above, in black and start at co-ords 50,50
     End Sub
 
     Private Sub button_submit_Click(sender As Object, e As EventArgs) Handles button_submit.Click
+        'Somebody clicked the submit button
+        'Set the error int, if this goes to 1 then there is an error
         Dim errors As Integer = 0
+        'This string will store any errors that occur
         Dim errorString As String = ""
         'Register Button has been pushed
 
@@ -85,13 +106,13 @@
         End If
         'Ignore address line 2
         'Postcode validation, at least 6 chars
-        If (txtBox_tel.Text.Length < 6 Or txtBox_post.Text.Length > 8) Then
+        If (txtBox_post.Text.Length < 6 Or txtBox_post.Text.Length > 8) Then
             errors = 1
             errorString = errorString + "You must have between 6-8 alpha numeric characters for the postcode" + vbCrLf
         End If
 
         'Town Validation
-        If (txtBox_town.Text.Length< 5) Then
+        If (txtBox_town.Text.Length < 5) Then
             errors = 1
             errorString = errorString + "The town must have 5 alpha numeric characters." + vbCrLf
 
@@ -105,29 +126,29 @@
 
         'Email validation
         'Split into array for first section
-        Dim emailPart1(1) As String
-        emailPart1 = Split(txtBox_email.Text, "@")
+        Dim emailPart1(1) As String ' Part 1 temp array
+        emailPart1 = Split(txtBox_email.Text, "@") 'Split by the @ symbol
         'Then split the second half by the .
-        If (emailPart1.Length > 1) Then
-            Dim emailPart2(2) As String
-            emailPart2 = Split(emailPart1(1), ".")
-            If (emailPart1(1).Length < 1 Or emailPart2(0).Length < 1 Or emailPart2(1).Length < 1) Then
-                errors = 1
-                errorString = errorString + "Email is invalid, please check it" + vbCrLf
+        If (emailPart1.Length > 1) Then 'The second half exsists so an @ is in the string
+            Dim emailPart2(2) As String 'Set the temp array
+            emailPart2 = Split(emailPart1(1), ".") 'Then split by a .
+            If (emailPart1(1).Length < 1 Or emailPart2(0).Length < 1 Or emailPart2(1).Length < 1) Then 'If any are under 1 char in length
+                errors = 1 'Cause Error
+                errorString = errorString + "Email is invalid, please check it" + vbCrLf 'Error log
             End If
         Else
-            errors = 1
-            errorString = errorString + "Email is invalid, please check it" + vbCrLf
+            errors = 1 'Error of no second part
+            errorString = errorString + "Email is invalid, please check it" + vbCrLf 'Error log
         End If
 
-        
+
         'Dropbox occupation
         If (dropDown_occ.Text = "Select") Then
             errors = 1
             errorString = errorString + "You must select an occupation." + vbCrLf
         End If
         'Company
-        If (dropDown_occ.Text= "Company Rep") Then
+        If (dropDown_occ.Text = "Company Rep") Then
             If (txtBox_com.Text.Length < 5) Then
                 errors = 1
                 errorString = errorString + "You must enter your company name." + vbCrLf
@@ -147,6 +168,7 @@
             newTicket = txtBox_Name.Text + "," + dropDown_occ.SelectedIndex.ToString + "," + eventName + "," + Date.Today.ToString + "," + txtBox_com.Text
             'Now add it as a new record
             Dim id As Integer = records.Length
+            'Then reset the records to have a new ID
             ReDim Preserve records(id)
             records(id) = newTicket
             'Finally re-write all tickets to txt
@@ -155,6 +177,13 @@
 
             'Reset the tab
             reset_tab1()
+            'Update the ticket list
+            updateTab3()
+            'Set ID to the ID just entered
+            spinner_Id.Value = id
+            updateTicket(id)
+            'Finally switch to ticket view
+            tabController.SelectedTab = TabPage2
         Else
             MsgBox(errorString, 0, "An Error Occured")
         End If
@@ -202,12 +231,12 @@
 
 
     Private Sub spinner_Id_ValueChanged(sender As Object, e As EventArgs) Handles spinner_Id.ValueChanged
-        updateTicket()
+        updateTicket(spinner_Id.Value)
     End Sub
-    Private Sub updateTicket()
+    Private Sub updateTicket(id As Integer)
         'Value has been changed, update the record
         'First get the ticket record from the spinner's ID
-        Dim ticketData As String = records(spinner_Id.Value)
+        Dim ticketData As String = records(id)
         'Then split the ticket record into each component
         Dim ticketArray(0) As String
         ticketArray = Split(ticketData, ",")
@@ -235,21 +264,26 @@
         Dim storageFile As String = "recordStorage.txt"
         'Storage file
         Dim rawData As String
-
+        'Load the data
         rawData = My.Computer.FileSystem.ReadAllText(storageFile)
+        'Remove the last semi colon from the end
         rawData = rawData.Substring(0, (rawData.Length - 1))
+        'Split all the records into an array
         records = Split(rawData, ";")
     End Sub
 
     Private Sub btn_Reload_Click(sender As Object, e As EventArgs) Handles btn_Reload.Click
         'This just force reloads from file
         loadFromTextFile()
+        'Update the last tab
         updateTab3()
     End Sub
 
     Private Sub writeTickets()
+        'Write all of the records to the storage file
+        'This string will hold the new data for the file which will be created below
         Dim newTicketFile As String = ""
-        Dim storageFile As String = "recordStorage.txt"
+        '
         For Each ticket As String In records
             newTicketFile = newTicketFile + ticket + ";"
         Next
@@ -257,13 +291,22 @@
     End Sub
 
     Private Sub updateTab3()
+        'Update the list tab to show all of the ticket records
+        'Set ticket to string, this will store that ticket's date temproarily
         Dim Ticket As String
+        'Set a ticket array to store the sub array of the record
         Dim TicketArray(0) As String
+        'Set a counter to calculate the ID of that ticket
         Dim uniqueid As Integer = 0
+        'run the ticket population loop
         For Each ticketData As String In records
+            'Split that record up by the comma
             TicketArray = Split(ticketData, ",")
+            'String concatnate the ticket up
             Ticket = TicketArray(0) + "," + TicketArray(1) + "," + TicketArray(4) + "," + uniqueid.ToString("D4")
+            'Add that ticket to the list
             list_Tab3.Items.Add(Ticket)
+            'add one to the unique ID counter
             uniqueid = uniqueid + 1
         Next
 

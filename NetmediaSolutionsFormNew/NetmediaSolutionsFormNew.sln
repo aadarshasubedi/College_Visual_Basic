@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "NetmediaSolutionsFormNew", "NetmediaSolutionsFormNew\NetmediaSolutionsFormNew.vbproj", "{622874E2-56E7-4DF0-B170-94A478A9D913}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Netmedia_ERS_ryanwalmsley", "NetmediaSolutionsFormNew\Netmedia_ERS_ryanwalmsley.vbproj", "{622874E2-56E7-4DF0-B170-94A478A9D913}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
