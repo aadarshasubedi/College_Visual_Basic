@@ -46,6 +46,8 @@
         reset_tab1()
         'And on the second tab update the ticket
         updateTicket(0)
+        'And update the last tab
+        updateTab3()
     End Sub
 
 
@@ -132,9 +134,18 @@
         If (emailPart1.Length > 1) Then 'The second half exsists so an @ is in the string
             Dim emailPart2(2) As String 'Set the temp array
             emailPart2 = Split(emailPart1(1), ".") 'Then split by a .
-            If (emailPart1(1).Length < 1 Or emailPart2(0).Length < 1 Or emailPart2(1).Length < 1) Then 'If any are under 1 char in length
-                errors = 1 'Cause Error
-                errorString = errorString + "Email is invalid, please check it" + vbCrLf 'Error log
+            If (emailPart2.Length > 1) Then
+            Else
+                If (emailPart1(1).Length < 1 Or emailPart2(0).Length < 1 Or emailPart2(1).Length < 1) Then 'If any are under 1 char in length
+                    errors = 1 'Cause Error
+                    errorString = errorString + "Email is invalid, please check it" + vbCrLf 'Error log
+                Else
+
+                    errors = 1 'Cause Error
+                    errorString = errorString + "Email is invalid, please check it" + vbCrLf 'Error log
+                End If
+
+            
             End If
         Else
             errors = 1 'Error of no second part
@@ -182,8 +193,13 @@
             'Set ID to the ID just entered
             spinner_Id.Value = id
             updateTicket(id)
+            'Update the third tab
+            updateTab3()
+
             'Finally switch to ticket view
+
             tabController.SelectedTab = TabPage2
+
         Else
             MsgBox(errorString, 0, "An Error Occured")
         End If
@@ -261,7 +277,6 @@
 
     Private Sub loadFromTextFile()
         'Set the data file as a glob
-        Dim storageFile As String = "recordStorage.txt"
         'Storage file
         Dim rawData As String
         'Load the data
@@ -293,19 +308,40 @@
     Private Sub updateTab3()
         'Update the list tab to show all of the ticket records
         'Set ticket to string, this will store that ticket's date temproarily
-        Dim Ticket As String
-        'Set a ticket array to store the sub array of the record
+        'Dim Ticket As String
+        ' 'Set a ticket array to store the sub array of the record
         Dim TicketArray(0) As String
         'Set a counter to calculate the ID of that ticket
         Dim uniqueid As Integer = 0
         'run the ticket population loop
+        'Remove all data
+        list_Tab3.Items.Clear()
+
+
         For Each ticketData As String In records
             'Split that record up by the comma
             TicketArray = Split(ticketData, ",")
             'String concatnate the ticket up
-            Ticket = TicketArray(0) + "," + TicketArray(1) + "," + TicketArray(4) + "," + uniqueid.ToString("D4")
+            'Ticket = +"," + TicketArray(1) + "," + TicketArray(4) + "," + uniqueid.ToString("D4")
             'Add that ticket to the list
-            list_Tab3.Items.Add(Ticket)
+            'list_Tab3.Items.Add(Ticket)
+            Dim index As Integer
+
+            'remove all items first
+
+
+            index = list_Tab3.Items.Add(TicketArray(0)).Index
+
+            If (TicketArray(1) = 0) Then
+                list_Tab3.Items.Item(index).SubItems.Add("Company Rep")
+            ElseIf (TicketArray(1) = 1) Then
+                list_Tab3.Items.Item(index).SubItems.Add("Induvidual")
+            Else
+                list_Tab3.Items.Item(index).SubItems.Add("Student")
+            End If
+
+            list_Tab3.Items.Item(index).SubItems.Add(TicketArray(4))
+            list_Tab3.Items.Item(index).SubItems.Add(uniqueid.ToString("D4"))
             'add one to the unique ID counter
             uniqueid = uniqueid + 1
         Next

@@ -6,12 +6,13 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{622874E2-56E7-4DF0-B170-94A478A9D913}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>NetmediaSolutionsFormNew.My.MyApplication</StartupObject>
-    <RootNamespace>NetmediaSolutionsFormNew</RootNamespace>
-    <AssemblyName>NetmediaSolutionsFormNew</AssemblyName>
+    <StartupObject>Netmedia_ERS_ryanwalmsley.My.MyApplication</StartupObject>
+    <RootNamespace>Netmedia_ERS_ryanwalmsley</RootNamespace>
+    <AssemblyName>Netmedia_ERS_ryanwalmsley</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>C:\Users\Ryan\Documents\GitHub\College_Visual_Basic\Release\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -22,9 +23,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationRevision>1</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -36,7 +36,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>NetmediaSolutionsFormNew.xml</DocumentationFile>
+    <DocumentationFile>Netmedia_ERS_ryanwalmsley.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -46,7 +46,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>NetmediaSolutionsFormNew.xml</DocumentationFile>
+    <DocumentationFile>Netmedia_ERS_ryanwalmsley.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>

@@ -23,6 +23,7 @@ Partial Class Main
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim ListViewItem3 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"Ryan Walmsley", "Company Rep", "Ryanteck LTD.", "0000"}, -1)
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -65,11 +66,15 @@ Partial Class Main
         Me.spinner_Id = New System.Windows.Forms.NumericUpDown()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.list_Tab3 = New System.Windows.Forms.ListView()
+        Me.fullName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.occupation = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.companyNameList = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.uId = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.btn_Reload = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.print_ticket_dialog = New System.Windows.Forms.PrintDialog()
         Me.print_ticket_document = New System.Drawing.Printing.PrintDocument()
-        Me.list_Tab3 = New System.Windows.Forms.ListBox()
-        Me.btn_Reload = New System.Windows.Forms.Button()
         Me.tabController.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -111,11 +116,11 @@ Partial Class Main
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Consolas", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(79, 123)
+        Me.Label7.Location = New System.Drawing.Point(131, 123)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(194, 28)
+        Me.Label7.Size = New System.Drawing.Size(142, 28)
         Me.Label7.TabIndex = 6
-        Me.Label7.Text = "Date Of Birth:"
+        Me.Label7.Text = "Age Range:"
         '
         'Label8
         '
@@ -230,7 +235,7 @@ Partial Class Main
         Me.txtBox_id.Name = "txtBox_id"
         Me.txtBox_id.ReadOnly = True
         Me.txtBox_id.Size = New System.Drawing.Size(198, 30)
-        Me.txtBox_id.TabIndex = 21
+        Me.txtBox_id.TabIndex = 0
         '
         'txtBox_Name
         '
@@ -238,7 +243,7 @@ Partial Class Main
         Me.txtBox_Name.Location = New System.Drawing.Point(317, 85)
         Me.txtBox_Name.Name = "txtBox_Name"
         Me.txtBox_Name.Size = New System.Drawing.Size(198, 30)
-        Me.txtBox_Name.TabIndex = 22
+        Me.txtBox_Name.TabIndex = 1
         '
         'txtBox_addr1
         '
@@ -246,7 +251,7 @@ Partial Class Main
         Me.txtBox_addr1.Location = New System.Drawing.Point(317, 157)
         Me.txtBox_addr1.Name = "txtBox_addr1"
         Me.txtBox_addr1.Size = New System.Drawing.Size(198, 30)
-        Me.txtBox_addr1.TabIndex = 24
+        Me.txtBox_addr1.TabIndex = 3
         '
         'txtBox_addr2
         '
@@ -254,7 +259,7 @@ Partial Class Main
         Me.txtBox_addr2.Location = New System.Drawing.Point(317, 193)
         Me.txtBox_addr2.Name = "txtBox_addr2"
         Me.txtBox_addr2.Size = New System.Drawing.Size(198, 30)
-        Me.txtBox_addr2.TabIndex = 25
+        Me.txtBox_addr2.TabIndex = 4
         '
         'txtBox_post
         '
@@ -262,7 +267,7 @@ Partial Class Main
         Me.txtBox_post.Location = New System.Drawing.Point(317, 229)
         Me.txtBox_post.Name = "txtBox_post"
         Me.txtBox_post.Size = New System.Drawing.Size(198, 30)
-        Me.txtBox_post.TabIndex = 26
+        Me.txtBox_post.TabIndex = 5
         '
         'txtBox_tel
         '
@@ -270,7 +275,7 @@ Partial Class Main
         Me.txtBox_tel.Location = New System.Drawing.Point(317, 301)
         Me.txtBox_tel.Name = "txtBox_tel"
         Me.txtBox_tel.Size = New System.Drawing.Size(198, 30)
-        Me.txtBox_tel.TabIndex = 28
+        Me.txtBox_tel.TabIndex = 7
         '
         'txtBox_town
         '
@@ -278,7 +283,7 @@ Partial Class Main
         Me.txtBox_town.Location = New System.Drawing.Point(317, 265)
         Me.txtBox_town.Name = "txtBox_town"
         Me.txtBox_town.Size = New System.Drawing.Size(198, 30)
-        Me.txtBox_town.TabIndex = 29
+        Me.txtBox_town.TabIndex = 6
         '
         'txtBox_email
         '
@@ -286,7 +291,7 @@ Partial Class Main
         Me.txtBox_email.Location = New System.Drawing.Point(317, 333)
         Me.txtBox_email.Name = "txtBox_email"
         Me.txtBox_email.Size = New System.Drawing.Size(198, 30)
-        Me.txtBox_email.TabIndex = 30
+        Me.txtBox_email.TabIndex = 8
         '
         'txtBox_com
         '
@@ -295,7 +300,7 @@ Partial Class Main
         Me.txtBox_com.Location = New System.Drawing.Point(317, 409)
         Me.txtBox_com.Name = "txtBox_com"
         Me.txtBox_com.Size = New System.Drawing.Size(198, 30)
-        Me.txtBox_com.TabIndex = 31
+        Me.txtBox_com.TabIndex = 10
         '
         'toolTip1
         '
@@ -304,13 +309,15 @@ Partial Class Main
         '
         'dropDown_dob
         '
+        Me.dropDown_dob.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.dropDown_dob.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.dropDown_dob.Font = New System.Drawing.Font("Consolas", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dropDown_dob.FormattingEnabled = True
         Me.dropDown_dob.Items.AddRange(New Object() {"Under 7", "7-12", "12-15", "15-18", "18-21", "21+"})
         Me.dropDown_dob.Location = New System.Drawing.Point(317, 121)
         Me.dropDown_dob.Name = "dropDown_dob"
         Me.dropDown_dob.Size = New System.Drawing.Size(198, 30)
-        Me.dropDown_dob.TabIndex = 33
+        Me.dropDown_dob.TabIndex = 2
         '
         'dropDown_occ
         '
@@ -321,7 +328,7 @@ Partial Class Main
         Me.dropDown_occ.Name = "dropDown_occ"
         Me.dropDown_occ.Size = New System.Drawing.Size(198, 30)
         Me.dropDown_occ.Sorted = True
-        Me.dropDown_occ.TabIndex = 34
+        Me.dropDown_occ.TabIndex = 9
         '
         'tabController
         '
@@ -334,7 +341,7 @@ Partial Class Main
         Me.tabController.Padding = New System.Drawing.Point(65, 3)
         Me.tabController.SelectedIndex = 0
         Me.tabController.Size = New System.Drawing.Size(809, 592)
-        Me.tabController.TabIndex = 35
+        Me.tabController.TabIndex = 0
         '
         'TabPage1
         '
@@ -382,12 +389,14 @@ Partial Class Main
         Me.button_submit.Location = New System.Drawing.Point(653, 221)
         Me.button_submit.Name = "button_submit"
         Me.button_submit.Size = New System.Drawing.Size(142, 76)
-        Me.button_submit.TabIndex = 41
+        Me.button_submit.TabIndex = 16
         Me.button_submit.Text = "Register" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Attendee"
         Me.button_submit.UseVisualStyleBackColor = True
         '
         'dropDown_ref
         '
+        Me.dropDown_ref.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.dropDown_ref.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.dropDown_ref.Font = New System.Drawing.Font("Consolas", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dropDown_ref.FormattingEnabled = True
         Me.dropDown_ref.Items.AddRange(New Object() {"Flyers", "Newspaper", "Online", "Other", "Social Media"})
@@ -395,7 +404,7 @@ Partial Class Main
         Me.dropDown_ref.Name = "dropDown_ref"
         Me.dropDown_ref.Size = New System.Drawing.Size(198, 30)
         Me.dropDown_ref.Sorted = True
-        Me.dropDown_ref.TabIndex = 40
+        Me.dropDown_ref.TabIndex = 11
         '
         'radio_post
         '
@@ -404,7 +413,7 @@ Partial Class Main
         Me.radio_post.Location = New System.Drawing.Point(594, 497)
         Me.radio_post.Name = "radio_post"
         Me.radio_post.Size = New System.Drawing.Size(82, 32)
-        Me.radio_post.TabIndex = 39
+        Me.radio_post.TabIndex = 15
         Me.radio_post.TabStop = True
         Me.radio_post.Text = "Post"
         Me.radio_post.UseVisualStyleBackColor = True
@@ -416,7 +425,7 @@ Partial Class Main
         Me.radio_phone.Location = New System.Drawing.Point(493, 497)
         Me.radio_phone.Name = "radio_phone"
         Me.radio_phone.Size = New System.Drawing.Size(95, 32)
-        Me.radio_phone.TabIndex = 38
+        Me.radio_phone.TabIndex = 14
         Me.radio_phone.TabStop = True
         Me.radio_phone.Text = "Phone"
         Me.radio_phone.UseVisualStyleBackColor = True
@@ -428,7 +437,7 @@ Partial Class Main
         Me.radio_sms.Location = New System.Drawing.Point(418, 497)
         Me.radio_sms.Name = "radio_sms"
         Me.radio_sms.Size = New System.Drawing.Size(69, 32)
-        Me.radio_sms.TabIndex = 37
+        Me.radio_sms.TabIndex = 13
         Me.radio_sms.TabStop = True
         Me.radio_sms.Text = "SMS"
         Me.radio_sms.UseVisualStyleBackColor = True
@@ -440,7 +449,7 @@ Partial Class Main
         Me.radio_Email.Location = New System.Drawing.Point(317, 497)
         Me.radio_Email.Name = "radio_Email"
         Me.radio_Email.Size = New System.Drawing.Size(95, 32)
-        Me.radio_Email.TabIndex = 36
+        Me.radio_Email.TabIndex = 12
         Me.radio_Email.TabStop = True
         Me.radio_Email.Text = "Email"
         Me.radio_Email.UseVisualStyleBackColor = True
@@ -522,14 +531,54 @@ Partial Class Main
         'TabPage3
         '
         Me.TabPage3.BackColor = System.Drawing.SystemColors.Control
-        Me.TabPage3.Controls.Add(Me.btn_Reload)
         Me.TabPage3.Controls.Add(Me.list_Tab3)
+        Me.TabPage3.Controls.Add(Me.btn_Reload)
         Me.TabPage3.Controls.Add(Me.Label4)
         Me.TabPage3.Location = New System.Drawing.Point(4, 37)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Size = New System.Drawing.Size(801, 551)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Attendee List"
+        '
+        'list_Tab3
+        '
+        Me.list_Tab3.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.fullName, Me.occupation, Me.companyNameList, Me.uId})
+        Me.list_Tab3.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem3})
+        Me.list_Tab3.Location = New System.Drawing.Point(29, 37)
+        Me.list_Tab3.Name = "list_Tab3"
+        Me.list_Tab3.Size = New System.Drawing.Size(729, 430)
+        Me.list_Tab3.TabIndex = 0
+        Me.list_Tab3.UseCompatibleStateImageBehavior = False
+        Me.list_Tab3.View = System.Windows.Forms.View.Details
+        '
+        'fullName
+        '
+        Me.fullName.Text = "Attendee Name"
+        Me.fullName.Width = 226
+        '
+        'occupation
+        '
+        Me.occupation.Text = "Occupation"
+        Me.occupation.Width = 180
+        '
+        'companyNameList
+        '
+        Me.companyNameList.Text = "Company Name"
+        Me.companyNameList.Width = 207
+        '
+        'uId
+        '
+        Me.uId.Text = "ID"
+        Me.uId.Width = 108
+        '
+        'btn_Reload
+        '
+        Me.btn_Reload.Location = New System.Drawing.Point(29, 498)
+        Me.btn_Reload.Name = "btn_Reload"
+        Me.btn_Reload.Size = New System.Drawing.Size(136, 40)
+        Me.btn_Reload.TabIndex = 20
+        Me.btn_Reload.Text = "Reload"
+        Me.btn_Reload.UseVisualStyleBackColor = True
         '
         'Label4
         '
@@ -548,24 +597,6 @@ Partial Class Main
         '
         'print_ticket_document
         '
-        '
-        'list_Tab3
-        '
-        Me.list_Tab3.FormattingEnabled = True
-        Me.list_Tab3.ItemHeight = 28
-        Me.list_Tab3.Location = New System.Drawing.Point(29, 39)
-        Me.list_Tab3.Name = "list_Tab3"
-        Me.list_Tab3.Size = New System.Drawing.Size(729, 452)
-        Me.list_Tab3.TabIndex = 19
-        '
-        'btn_Reload
-        '
-        Me.btn_Reload.Location = New System.Drawing.Point(29, 498)
-        Me.btn_Reload.Name = "btn_Reload"
-        Me.btn_Reload.Size = New System.Drawing.Size(136, 40)
-        Me.btn_Reload.TabIndex = 20
-        Me.btn_Reload.Text = "Reload"
-        Me.btn_Reload.UseVisualStyleBackColor = True
         '
         'Main
         '
@@ -636,7 +667,11 @@ Partial Class Main
     Friend WithEvents print_ticket_document As System.Drawing.Printing.PrintDocument
     Friend WithEvents dropDown_ref As System.Windows.Forms.ComboBox
     Friend WithEvents button_submit As System.Windows.Forms.Button
-    Friend WithEvents list_Tab3 As System.Windows.Forms.ListBox
     Friend WithEvents btn_Reload As System.Windows.Forms.Button
+    Friend WithEvents list_Tab3 As System.Windows.Forms.ListView
+    Friend WithEvents fullName As System.Windows.Forms.ColumnHeader
+    Friend WithEvents occupation As System.Windows.Forms.ColumnHeader
+    Friend WithEvents companyNameList As System.Windows.Forms.ColumnHeader
+    Friend WithEvents uId As System.Windows.Forms.ColumnHeader
 
 End Class
