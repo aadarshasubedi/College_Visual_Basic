@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="Netmedia_ERS_ryanwalmsley.exe" version="1.0.0.2" publicKeyToken="9ef0fd93ad0dbf8a" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="Netmedia_ERS_ryanwalmsley" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="Netmedia_ERS_ryanwalmsley.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Netmedia_ERS_ryanwalmsley.exe" size="60416">
+      <assemblyIdentity name="Netmedia_ERS_ryanwalmsley" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>prh1VH/3/FLobu5TWVvikv8yZnU6osmqkSMbMQAxM5M=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Netmedia_ERS_ryanwalmsley.exe.config" size="186">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>h0UeIdteCM29dGVw07LmHp593fPbh0IN11GyN3f2uRA=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=ryanteck-ltd\Ryan" issuerKeyHash="ff34338956413084c8db2ca36aca0eff84669d8c" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>Gs3M2PmSLaM78J/8Br3jZpSbp8kOHhHKZnnz3GBWOkM=</DigestValue></Reference></SignedInfo><SignatureValue>D/2Y0xXjppm/FArpHlaCe6vro7cuogTdnLMFi/pBrLRttdWHcMvrlQxjl9IeL56UOekWJEz26AdXTbNFCRjwMVq5mfEuJ6AU/upZpRKFvi+4Y/8hEVdIwoqb7L97Uy+eNPjWVqN6whPHoSgzPoeCvfyZeh5RBvX5M4ZwudxNQpo=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>qqAZ7OUF1cfFF7sZ8fZ+fEOAD5HZ6bxcKxosM+yQp2Xic6xbefM1px9gLFGqJoEX1uZEyCuP420FHnUHNHeC5wlsN023bCspp7cemOSwmaqV4wDxfngS0S6aoQCmGZjmgwe/Yvuf9uKQfqb3Cd+RGzMcIyoDdkoxmFC/T8wS3uM=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="433a5660dcf37966ca111e0ec9a79b9466e3bd06fc9ff03ba32d92f9d8cccd1a" Description="" Url=""><as:assemblyIdentity name="Netmedia_ERS_ryanwalmsley.exe" version="1.0.0.2" publicKeyToken="9ef0fd93ad0dbf8a" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=ryanteck-ltd\Ryan</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>BICUba876x9553LYzAQ6HMC3XlW0rxFTRirtIjMgtQo=</DigestValue></Reference></SignedInfo><SignatureValue>CioJ1TREQEkngb2AxlWJ34U2PFs6CadN8g83OBT/OhpBZqmW5By2WMFzT5sz5+DUXz5cVETlXDptMPcH8rgO7uTYv32D68RHWqKPX3LHKO0K72XWWXA6H2RZ+CAh2bYk8PhkXzyd5MeTgH+OzsdHvDBIMB9YJHdy7dAFkGi9nxQ=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>qqAZ7OUF1cfFF7sZ8fZ+fEOAD5HZ6bxcKxosM+yQp2Xic6xbefM1px9gLFGqJoEX1uZEyCuP420FHnUHNHeC5wlsN023bCspp7cemOSwmaqV4wDxfngS0S6aoQCmGZjmgwe/Yvuf9uKQfqb3Cd+RGzMcIyoDdkoxmFC/T8wS3uM=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB3TCCAUagAwIBAgIQNFrks8iEDLxDZh0K6MYGFjANBgkqhkiG9w0BAQsFADAtMSswKQYDVQQDHiIAcgB5AGEAbgB0AGUAYwBrAC0AbAB0AGQAXABSAHkAYQBuMB4XDTE0MDUyMTIwMzAzOVoXDTE1MDUyMjAyMzAzOVowLTErMCkGA1UEAx4iAHIAeQBhAG4AdABlAGMAawAtAGwAdABkAFwAUgB5AGEAbjCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAqqAZ7OUF1cfFF7sZ8fZ+fEOAD5HZ6bxcKxosM+yQp2Xic6xbefM1px9gLFGqJoEX1uZEyCuP420FHnUHNHeC5wlsN023bCspp7cemOSwmaqV4wDxfngS0S6aoQCmGZjmgwe/Yvuf9uKQfqb3Cd+RGzMcIyoDdkoxmFC/T8wS3uMCAwEAATANBgkqhkiG9w0BAQsFAAOBgQBdGpgW2jWDBuTFarqozUDJU2ZeJPWuIxIgttMWPAg2rx1Yeivr57FPkFLsrtMRk/adctgF0kFl+RxfdK7naYBo9f38XeL3IcgIqtWrelI6vaKa+L7u3XsktILaZRtPsS7MBK6n3nXcRwRQW/k74L+VnvdhogB5bvAQuiCQ7gknsQ==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
