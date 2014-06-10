@@ -317,6 +317,7 @@
         'Remove all data
         list_Tab3.Items.Clear()
 
+        'This is a loop. 
 
         For Each ticketData As String In records
             'Split that record up by the comma
