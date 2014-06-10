@@ -89,9 +89,13 @@
         'This string will store any errors that occur
         Dim errorString As String = ""
         'Register Button has been pushed
+        'No Chars Array
+        Dim errorChars As String = "!£$%^&*()_+=-?><:@~{}|\.,/;'#[]"""
+        errorChars.ToCharArray()
 
         'Validate Full Name
-        If (txtBox_Name.Text.Length < 5) Then
+        'Array function from Stackoverflow & VB.Net reference
+        If (txtBox_Name.Text.Length < 5 Or errorChars.Any(Function(c) txtBox_Name.Text.Contains(c))) Then
             errors = 1
             errorString = errorString + "The full name must be at least 5 Alpha Numeric Characters." + vbCrLf
         End If
@@ -102,26 +106,26 @@
             errorString = errorString + "You must select a date of birth date range." + vbCrLf
         End If
         'Address line 1 must have 5 alphanumeric
-        If (txtBox_addr1.Text.Length < 5) Then
+        If (txtBox_addr1.Text.Length < 5 Or errorChars.Any(Function(c) txtBox_addr1.Text.Contains(c))) Then
             errors = 1
             errorString = errorString + "You must have 5 alpha numeric characters for your address " + vbCrLf
         End If
         'Ignore address line 2
         'Postcode validation, at least 6 chars
-        If (txtBox_post.Text.Length < 6 Or txtBox_post.Text.Length > 8) Then
+        If (txtBox_post.Text.Length < 6 Or txtBox_post.Text.Length > 8 Or errorChars.Any(Function(c) txtBox_post.Text.Contains(c))) Then
             errors = 1
             errorString = errorString + "You must have between 6-8 alpha numeric characters for the postcode" + vbCrLf
         End If
 
         'Town Validation
-        If (txtBox_town.Text.Length < 5) Then
+        If (txtBox_town.Text.Length < 5 Or errorChars.Any(Function(c) txtBox_town.Text.Contains(c))) Then
             errors = 1
             errorString = errorString + "The town must have 5 alpha numeric characters." + vbCrLf
 
         End If
 
         'Telephone Validation
-        If (txtBox_tel.Text.Length < 11) Then
+        If (txtBox_tel.Text.Length <> 11 Or errorChars.Any(Function(c) txtBox_tel.Text.Contains(c))) Then
             errors = 1
             errorString = errorString + "The telephone must have 11 digits" + vbCrLf
         End If
