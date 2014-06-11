@@ -357,7 +357,8 @@
         'Remove all data
         list_Tab3.Items.Clear()
 
-		'This for loop is a type of iteration of repeating the same code.
+	'This For Each loop is a type of iteration where it repeats the same code for each item in the array.
+	
         For Each ticketData As String In records
             'Split that record up by the comma
             TicketArray = Split(ticketData, ",")
@@ -371,8 +372,9 @@
 
 
             index = list_Tab3.Items.Add(TicketArray(0)).Index
-			'This is a type of selection selecting the first  part if it equals 0, then else if it equals 1 then the induvidual and finally if it equals neither (2) then it would be student.
-            If (TicketArray(1) = 0) Then
+	
+	'This is an selection statement using the keywords, If, ElseIf & Else
+	  If (TicketArray(1) = 0) Then
                 list_Tab3.Items.Item(index).SubItems.Add("Company Rep")
             ElseIf (TicketArray(1) = 1) Then
                 list_Tab3.Items.Item(index).SubItems.Add("Induvidual")
