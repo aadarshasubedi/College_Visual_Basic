@@ -226,6 +226,7 @@
             tabController.SelectedTab = TabPage2
 
         Else
+            'Messagebox component
             MsgBox(errorString, 0, "An Error Occured")
         End If
 
